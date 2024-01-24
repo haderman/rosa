@@ -3,6 +3,26 @@ import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../consts';
+
+import { contentfulClient } from "../lib/contentful";
+import type { BlogPost } from "../lib/contentful";
+
+const entries = await contentfulClient.getEntries<BlogPost>({
+  content_type: "blogPost",
+});
+
+const posts = entries.items.map((item) => {
+  const { title, date, description, slug } = item.fields;
+  return {
+    title,
+    slug,
+    description,
+    date: new Date(date).toLocaleDateString()
+  };
+});
+
+console.log(posts);
+
 ---
 
 <!doctype html>
