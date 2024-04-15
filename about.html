@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Landing Page Hero Section</title>
+<style>
+  body, html {
+    height: 100%;
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+
+  .hero-section {
+    height: 100%;
+    background: url('background-image.jpg') no-repeat center center/cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff;
+  }
+
+  .hero-content {
+    max-width: 600px;
+  }
+
+  .hero-heading {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+  }
+
+  .hero-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .opt-in-form {
+    text-align: left;
+  }
+
+  .opt-in-form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: 5px;
+  }
+
+  .opt-in-form input[type="submit"] {
+    width: 100%;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .opt-in-form input[type="submit"]:hover {
+    background-color: #0056b3;
+  }
+</style>
+</head>
+<body>
+  <section class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-heading">Welcome to Our Service</h1>
+      <p class="hero-text">Join our community and stay updated with the latest news.</p>
+      <form class="opt-in-form" action="#" method="post">
+        <input type="email" name="email" placeholder="Enter your email" required>
+        <input type="submit" value="Subscribe">
+      </form>
+    </div>
+  </section>
+</body>
+</html>

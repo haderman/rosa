@@ -1,0 +1,149 @@
+:root {
+  --background: white;
+  --border-radius-nav-item: 100%;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-color: var(--background);
+}
+
+/*  Custom CSS
+----------------------------------------------- */
+
+:root {
+  --color-brown: hsl(38.86deg 44.68% 53.92%);
+}
+
+#container {
+  display: flex;
+  flex-direction: column;
+  width: 100% !important;
+}
+
+#header {
+  display: flex;
+  justify-content: space-around;
+  height: 120px
+}
+
+#header img {
+  height: 100%;
+}
+
+#header nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+#header nav ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 1.2rem;
+}
+
+.rosa-hero {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  gap: 2rem;
+}
+
+.rosa-hero > div {
+  flex: 1;
+}
+
+.rosa-hero > div:first-child {
+  text-wrap: pretty;
+  max-width: 30ch;
+  font-size: 2rem;
+  line-height: normal;
+}
+
+.aside-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  background: var(--color-brown);
+  padding: 2rem;
+}
+
+.aside-container aside {
+  max-width: 1000px;
+}
+
+.rosa-circular-nav {
+  position: relative;
+  width: 40vw;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-areas:
+    "top-left top-right"
+    "bottom-left bottom-right";
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+
+.rosa-circular-nav::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 50%;
+  aspect-ratio: 1/1;
+  border-radius: 50%;
+  background-color: var(--background);
+}
+
+a[data-orientation="top-left"] {
+  grid-area: top-left;
+  border-radius: var(--border-radius-nav-item) 0 0 0;
+  transform-origin: 110% 110%;
+  background-color: blanchedalmond;
+}
+
+a[data-orientation="top-left"] div {
+  background-image: url('https://farm3.staticflickr.com/2827/10384422264_d9c7299146.jpg');
+}
+
+a[data-orientation="top-right"] {
+  grid-area: top-right;
+  border-radius: 0 var(--border-radius-nav-item) 0 0;
+  transform-origin: -10% 110%;
+  background-color: cornsilk;
+}
+
+a[data-orientation="top-right"] div {
+  background-image: url('https://farm7.staticflickr.com/6083/6055581292_d94c2d90e3.jpg');
+}
+
+a[data-orientation="bottom-left"] {
+  grid-area: bottom-left;
+  border-radius: 0 0 0 var(--border-radius-nav-item);
+  transform-origin: 110% -10%;
+  background-color: floralwhite;
+}
+
+a[data-orientation="bottom-left"] div {
+  background-image: url('https://farm7.staticflickr.com/6092/6227418584_d5883b0948.jpg');
+}
+
+a[data-orientation="bottom-right"] {
+  grid-area: bottom-right;
+  border-radius: 0 0 var(--border-radius-nav-item) 0;
+  transform-origin: -10% -10%;
+  background-color: gainsboro;
+}
+
+a[data-orientation="bottom-right"] div {
+  background-image: url('https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg');
+}
