@@ -8,7 +8,7 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: var(--background);
+  background-color: var(--rosa-page-background);
 }
 
 /*  Custom CSS
@@ -16,8 +16,10 @@ body {
 
 /* MARK: ROOT */
 :root {
-  --footer-color: #be9955;
-  --text-color: black;
+  --rosa-page-background: white;
+  --rosa-footer-color: #be9955;
+  --rosa-text-color: black;
+  --rosa-max-width: 1200px;
 }
 
 /* MARK: GLOBAL */
@@ -29,7 +31,7 @@ body {
 
 body {
   font-size: 16px;
-  color: var(--text-color);
+  color: var(--rosa-text-color);
 }
 
 ul,
@@ -39,6 +41,7 @@ ol {
 
 a,
 p,
+q,
 h1,
 h2,
 h3,
@@ -47,6 +50,21 @@ h5,
 h6 {
   font-size: inherit;
   color: inherit;
+}
+
+a,
+p,
+span {
+  text-wrap: pretty;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
 }
 
 a {
@@ -61,13 +79,15 @@ a:hover {
   display: flex;
   flex-direction: column;
   width: 100% !important;
+  min-height: 100%;
 }
 
 /* MARK: HEADER */
 #rosa-header {
   display: flex;
   justify-content: space-around;
-  height: 120px
+  height: 100px;
+  padding: 10px;
 }
 
 #rosa-header img {
@@ -92,13 +112,14 @@ a:hover {
 
 /* MARK: HERO */
 .rosa-hero {
+  flex: 1;
   display: flex;
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
   flex-wrap: wrap;
-  padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 .rosa-hero > div {
@@ -108,25 +129,41 @@ a:hover {
 .rosa-hero > div:first-child {
   text-wrap: pretty;
   max-width: 30ch;
-  font-size: 2rem;
   line-height: normal;
 }
 
-.rosa-aside-container {
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  background: var(--color-brown);
-  padding: 2rem;
+/* MARK: HERO QUOTE */
+.rosa-hero-quote {
+  position: relative;
+  font-size: 1.5rem;
 }
 
-.rosa-aside-container aside {
-  max-width: 1000px;
+.rosa-hero-quote img:first-child {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: translate(-100%, -50%);
 }
 
+.rosa-hero-quote img:last-child {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(180deg) translate(-50%, -50%);
+}
+
+.rosa-hero-quote q::before {
+  content: "";
+}
+
+.rosa-hero-quote q::after {
+  content: "";
+}
+
+/* MARK: HERO NAV */
 .rosa-circular-nav {
   position: relative;
-  width: 40vw;
+  width: 32vw;
   aspect-ratio: 1/1;
   display: grid;
   grid-template-areas:
@@ -142,10 +179,20 @@ a:hover {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 50%;
+  width: 60%;
   aspect-ratio: 1/1;
   border-radius: 50%;
-  background-color: var(--background);
+  background-color: var(--rosa-page-background);
+}
+
+.rosa-circular-nav a {
+  overflow: hidden;
+}
+
+.rosa-circular-nav img {
+  width: 400px;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
 }
 
 a[data-orientation="top-left"] {
@@ -192,6 +239,17 @@ a[data-orientation="bottom-right"] div {
   background-image: url('https://farm8.staticflickr.com/7187/6895047173_d4b1a0d798.jpg');
 }
 
+.rosa-aside-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+}
+
+.rosa-aside-container aside {
+  max-width: 1000px;
+}
+
 /* MARK: FOOTER */
 .rosa-footer {
   display: flex;
@@ -199,7 +257,7 @@ a[data-orientation="bottom-right"] div {
   align-items: center;
   gap: 2rem;
   padding: 2rem;
-  background-color: var(--footer-color);
+  background-color: var(--rosa-footer-color);
   font-size: 0.8rem;
 }
 
