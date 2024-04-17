@@ -114,26 +114,24 @@ a:hover {
 .rosa-hero {
   flex: 1;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 10vw;
   flex-wrap: wrap;
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-}
-
-.rosa-hero > div {
-  flex: 1;
+  padding: 2rem;
 }
 
 .rosa-hero > div:first-child {
   text-wrap: pretty;
-  max-width: 30ch;
+  max-width: 40ch;
   line-height: normal;
 }
 
 /* MARK: HERO QUOTE */
 .rosa-hero-quote {
+  flex-grow: 1;
+  flex-basis: 300px;
+  flex-shrink: 0;
   position: relative;
   font-size: 1.5rem;
 }
@@ -162,6 +160,8 @@ a:hover {
 
 /* MARK: HERO NAV */
 .rosa-circular-nav {
+  flex-grow: 0.3;
+  flex-basis: 300px;
   position: relative;
   width: 32vw;
   aspect-ratio: 1/1;
