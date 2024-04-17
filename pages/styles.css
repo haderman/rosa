@@ -14,14 +14,22 @@ body {
 /*  Custom CSS
 ----------------------------------------------- */
 
+/* MARK: ROOT */
 :root {
-  --footer-color: hsl(38.86deg 44.68% 53.92%);
+  --footer-color: #be9955;
+  --text-color: black;
 }
 
+/* MARK: GLOBAL */
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+body {
+  font-size: 16px;
+  color: var(--text-color);
 }
 
 ul,
@@ -29,29 +37,50 @@ ol {
   list-style: none;
 }
 
-#container {
+a,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-size: inherit;
+  color: inherit;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+#rosa-container {
   display: flex;
   flex-direction: column;
   width: 100% !important;
 }
 
-#header {
+/* MARK: HEADER */
+#rosa-header {
   display: flex;
   justify-content: space-around;
   height: 120px
 }
 
-#header img {
+#rosa-header img {
   height: 100%;
 }
 
-#header nav {
+#rosa-header nav {
   display: flex;
   flex-direction: row;
   align-items: center;
 }
 
-#header nav ul {
+#rosa-header nav ul {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -67,6 +96,9 @@ ol {
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
+  flex-wrap: wrap;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
 }
 
 .rosa-hero > div {
@@ -80,7 +112,7 @@ ol {
   line-height: normal;
 }
 
-.aside-container {
+.rosa-aside-container {
   width: 100%;
   display: flex;
   justify-content: center;
@@ -88,7 +120,7 @@ ol {
   padding: 2rem;
 }
 
-.aside-container aside {
+.rosa-aside-container aside {
   max-width: 1000px;
 }
 
@@ -168,13 +200,17 @@ a[data-orientation="bottom-right"] div {
   gap: 2rem;
   padding: 2rem;
   background-color: var(--footer-color);
+  font-size: 0.8rem;
 }
 
 .rosa-footer ul {
+  width: 100%;
+  max-width: 1200px;
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: baseline;
   gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .rosa-footer-item {
@@ -189,7 +225,16 @@ a[data-orientation="bottom-right"] div {
   align-items: flex-start;
   gap: 1rem;
   list-style-type: disc;
+  list-style-position: inside;
 }
 
+.rosa-footer-item img {
+  height: 48px;
+  width: auto;
+}
 
+img.rosa-footer-logo {
+  height: 48px;
+  width: 48px;
+}
 
