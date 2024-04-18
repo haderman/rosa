@@ -85,9 +85,17 @@ a:hover {
 /* MARK: HEADER */
 #rosa-header {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   height: 100px;
   padding: 10px;
+}
+
+#rosa-header > div {
+  display: flex;
+  justify-content: space-between;
+  height: 100%;
+  width: 100%;
+  max-width: var(--rosa-max-width);
 }
 
 #rosa-header img {
@@ -95,9 +103,13 @@ a:hover {
 }
 
 #rosa-header nav {
+  align-self: center;
+}
+
+#rosa-header nav ul {
   display: flex;
-  flex-direction: row;
   align-items: center;
+  gap: 1rem;
 }
 
 #rosa-header nav ul {
@@ -263,9 +275,9 @@ a[data-orientation="bottom-right"] div {
 
 .rosa-footer ul {
   width: 100%;
-  max-width: 1200px;
+  max-width: var(--rosa-max-width);
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: baseline;
   gap: 2rem;
   flex-wrap: wrap;
@@ -284,6 +296,7 @@ a[data-orientation="bottom-right"] div {
   gap: 1rem;
   list-style-type: disc;
   list-style-position: inside;
+  list-style: url('../assets/list-decoration.png');
 }
 
 .rosa-footer-item img {
