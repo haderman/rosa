@@ -9,6 +9,7 @@ body {
   padding: 0;
   height: 100%;
   background-color: var(--rosa-page-background);
+  font-family: "Noto Sans", sans-serif;
 }
 
 /*  Custom CSS
@@ -17,7 +18,7 @@ body {
 /* MARK: ROOT */
 :root {
   --rosa-page-background: white;
-  --rosa-footer-color: #be9955;
+  --rosa-footer-color: var(--rosa-page-background);
   --rosa-text-color: black;
   --rosa-max-width: 1200px;
 }
@@ -37,6 +38,10 @@ body {
 ul,
 ol {
   list-style: none;
+}
+
+a {
+  font-family: "Montserrat";
 }
 
 a,
@@ -86,16 +91,7 @@ a:hover {
 #rosa-header {
   display: flex;
   justify-content: center;
-  height: 100px;
-  padding: 10px;
-}
-
-#rosa-header > div {
-  display: flex;
-  justify-content: space-between;
-  height: 100%;
-  width: 100%;
-  max-width: var(--rosa-max-width);
+  padding: 20px;
 }
 
 #rosa-header img {
@@ -106,20 +102,31 @@ a:hover {
   align-self: center;
 }
 
-#rosa-header nav ul {
-  display: flex;
+#rosa-header nav {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
   align-items: center;
-  gap: 1rem;
+  max-width: var(--rosa-max-width);
+  width: 100%;
 }
 
-#rosa-header nav ul {
+#rosa-header nav a {
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  list-style: none;
-  margin: 0;
-  padding: 0;
   font-size: 1.2rem;
+}
+
+#rosa-header nav a:nth-child(4) {
+  margin: auto;
+}
+
+#rosa-header nav a:nth-child(5) {
+  margin-left: auto;
+}
+
+#rosa-header nav img {
+  height: 96px;
+  width: 96px;
+  margin: auto;
 }
 
 /* MARK: HERO */
@@ -130,7 +137,7 @@ a:hover {
   align-items: center;
   gap: 10vw;
   flex-wrap: wrap;
-  padding: 2rem;
+  padding: 3rem 3rem;
 }
 
 .rosa-hero > div:first-child {
@@ -141,10 +148,9 @@ a:hover {
 
 /* MARK: HERO NAV */
 .rosa-circular-nav {
-  flex-grow: 0.3;
-  flex-basis: 300px;
+  width: 100%;
+  max-width: 500px;
   position: relative;
-  width: 32vw;
   aspect-ratio: 1/1;
   display: grid;
   grid-template-areas:
@@ -217,12 +223,11 @@ a[data-orientation="bottom"] div {
   justify-content: space-around;
   align-items: center;
   gap: 2rem;
-  padding: 2rem;
   background-color: var(--rosa-footer-color);
   font-size: 0.8rem;
 }
 
-.rosa-footer ul {
+.rosa-footer > ul {
   width: 100%;
   max-width: var(--rosa-max-width);
   display: flex;
@@ -230,6 +235,8 @@ a[data-orientation="bottom"] div {
   align-items: baseline;
   gap: 2rem;
   flex-wrap: wrap;
+  padding: 2rem;
+  border-top: 2px solid var(--rosa-text-color);
 }
 
 .rosa-footer-item {
@@ -245,7 +252,6 @@ a[data-orientation="bottom"] div {
   gap: 1rem;
   list-style-type: disc;
   list-style-position: inside;
-  list-style: url('../assets/list-decoration.png');
 }
 
 .rosa-footer-item img {
@@ -253,8 +259,7 @@ a[data-orientation="bottom"] div {
   width: auto;
 }
 
-img.rosa-footer-logo {
-  height: 48px;
-  width: 48px;
+img.rosa-footer-contacto {
+  width: 100%;
 }
 
