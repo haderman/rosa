@@ -21,6 +21,7 @@ body {
   --rosa-footer-color: var(--rosa-page-background);
   --rosa-text-color: black;
   --rosa-max-width: 1200px;
+  --rosa-focus-color: goldenrod;
 }
 
 /* MARK: GLOBAL */
@@ -28,6 +29,10 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+}
+
+*:focus {
+  outline: 2px solid var(--rosa-focus-color);
 }
 
 body {
@@ -92,22 +97,7 @@ a:hover {
   display: flex;
   justify-content: center;
   padding: 20px;
-}
-
-#rosa-header img {
-  height: 100%;
-}
-
-#rosa-header nav {
-  align-self: center;
-}
-
-#rosa-header nav {
-  display: grid;
-  grid-template-columns: repeat(5, 1fr);
-  align-items: center;
-  max-width: var(--rosa-max-width);
-  width: 100%;
+  z-index: 2;
 }
 
 #rosa-header nav a {
@@ -123,10 +113,100 @@ a:hover {
   margin-left: auto;
 }
 
-#rosa-header nav img {
-  height: 96px;
+.logo {
   width: 96px;
   margin: auto;
+}
+
+#desktop-nav {
+  display: none;
+  margin: auto;
+}
+
+#mobile-nav {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#mobile-nav:has(input:checked) #menu {
+  transform: translate(0, 0);
+}
+
+@media screen and (min-width: 768px) {
+  #mobile-nav {
+    display: none;
+  }
+
+  #desktop-nav {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: center;
+    max-width: var(--rosa-max-width);
+    width: 100%;
+  }
+}
+
+/* MARK: NAV MENU */
+label[for="menu-toggle"] {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+label[for="menu-toggle"]:hover {
+  background-color: lightgray;
+}
+
+label[for="menu-toggle"]:focus-within {
+  outline: 2px solid goldenrod;
+}
+
+label[for="menu-toggle"] img {
+  width: 32px;
+  height: 32px;
+}
+
+label[for="menu-toggle"]:has(input:checked) .menu-icon {
+  display: none;
+}
+
+label[for="menu-toggle"]:has(input:checked) .close-icon {
+  display: block;
+}
+
+label[for="menu-toggle"]:not(:has(input:checked)) .menu-icon {
+  display: block;
+}
+
+label[for="menu-toggle"]:not(:has(input:checked)) .close-icon {
+  display: none;
+}
+
+#menu {
+  position: absolute;
+  top: 130px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 130px);
+  padding: 50px;
+  background-color: var(--rosa-page-background);
+  transform-origin: 0% 0%;
+  transform: translate(-100%, 0);
+  transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+}
+
+#menu li {
+  padding: 10px 0;
+  font-size: 22px;
+}
+
+#menu-toggle input:checked ~ ul {
+  transform: translate(0, 0);
 }
 
 /* MARK: HERO */
@@ -259,7 +339,13 @@ a[data-orientation="bottom"] div {
   width: auto;
 }
 
-img.rosa-footer-contacto {
-  width: 100%;
+/* MARK: HELPERS */
+.visually-hidden {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
 }
-

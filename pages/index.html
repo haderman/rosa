@@ -17,11 +17,27 @@
   <div id="rosa-container">
     <!-- MARK: HEADER -->
     <div id="rosa-header">
-      <nav>
+      <nav id="mobile-nav">
+        <a href="/">
+          <img class="logo" src="../assets/logo.png" alt="logo" />
+        </a>
+        <label for="menu-toggle">
+          <img class="menu-icon" src="../assets/menu.png" alt="menu" />
+          <img class="close-icon" src="../assets/close.png" alt="close" />
+          <input id="menu-toggle" type="checkbox" class="visually-hidden" />
+        </label>
+        <ul id="menu">
+          <li><a tabindex="-1" href="#">NOSOTROS</a></li>
+          <li><a tabindex="-1" href="#">SABIDURÍA ANDINA</a></li>
+          <li><a tabindex="-1" href="#">EDITORIAL</a></li>
+          <li><a tabindex="-1" href="#">ACTIVIDADES</a></li>
+        </ul>
+      </nav>
+      <nav id="desktop-nav">
         <a href="#">NOSOTROS</a>
         <a href="#">SABIDURÍA ANDINA</a>
         <a href="/">
-          <img src="../assets/logo.png" alt="logo" />
+          <img class="logo" src="../assets/logo.png" alt="logo" />
         </a>
         <a href="#">EDITORIAL</a>
         <a href="#">ACTIVIDADES</a>
