@@ -105,10 +105,21 @@ a:hover {
   font-size: 1.2rem;
 }
 
+#rosa-header nav a:first-child {
+  margin-right: auto;
+}
+#rosa-header nav a:nth-child(2) {
+  margin-right: auto;
+}
+#rosa-header nav a:has(img) {
+  outline: none;
+}
+#rosa-header nav a:focus img {
+  outline: 2px solid var(--rosa-focus-color);
+}
 #rosa-header nav a:nth-child(4) {
   margin: auto;
 }
-
 #rosa-header nav a:nth-child(5) {
   margin-left: auto;
 }
@@ -146,6 +157,10 @@ a:hover {
     max-width: var(--rosa-max-width);
     width: 100%;
   }
+}
+
+body:has(#mobile-nav input:checked) {
+  overflow: hidden;
 }
 
 /* MARK: NAV MENU */
