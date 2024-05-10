@@ -249,8 +249,8 @@ label[for="menu-toggle"]:not(:has(input:checked)) .close-icon {
   aspect-ratio: 1/1;
   display: grid;
   grid-template-areas:
-    "top-left top-right"
-    "bottom bottom";
+    "superior superior"
+    "inferior-izquierdo inferior-derecho";
   grid-template-columns: repeat(2, 1fr);
   grid-template-rows: repeat(2, 1fr);
   overflow: hidden;
@@ -275,30 +275,42 @@ label[for="menu-toggle"]:not(:has(input:checked)) .close-icon {
   transition: transform .3s ease-in-out;
 }
 
-a[data-orientation="top-left"] {
-  grid-area: top-left;
+a[data-orientation="inferior-izquierdo"] {
+  grid-area: inferior-izquierdo;
   z-index: 1;
   transform-origin: 110% 110%;
   background-color: blanchedalmond;
 }
 
-a[data-orientation="top-right"] {
-  grid-area: top-right;
+a[data-orientation="inferior-izquierdo"] img {
+  object-position: left;
+}
+
+a[data-orientation="inferior-derecho"] {
+  grid-area: inferior-derecho;
   z-index: 1;
   transform-origin: -10% 110%;
   background-color: cornsilk;
 }
 
-a[data-orientation="bottom"] {
-  grid-area: bottom;
+a[data-orientation="inferior-derecho"] img {
+  object-position: left;
 }
 
-a[data-orientation="bottom"] div {
+a[data-orientation="superior"] {
+  grid-area: superior;
+}
+
+a[data-orientation="superior"] div {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+}
+
+a[data-orientation="superior"] img {
+  object-position: top;
 }
 
 .rosa-aside-container {
@@ -310,6 +322,11 @@ a[data-orientation="bottom"] div {
 
 .rosa-aside-container aside {
   max-width: 1000px;
+}
+
+.rosa-separator {
+  display: flex;
+  justify-content: center;
 }
 
 /* MARK: FOOTER */
@@ -331,7 +348,6 @@ a[data-orientation="bottom"] div {
   gap: 2rem;
   flex-wrap: wrap;
   padding: 2rem;
-  border-top: 2px solid var(--rosa-text-color);
 }
 
 .rosa-footer-item {
@@ -345,8 +361,13 @@ a[data-orientation="bottom"] div {
   flex-direction: column;
   align-items: flex-start;
   gap: 1rem;
-  list-style-type: disc;
+  list-style-type: ">";
   list-style-position: inside;
+}
+
+.rosa-footer-item a {
+  position: relative;
+  left: 4px;
 }
 
 .rosa-footer-item img {
