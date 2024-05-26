@@ -1,25 +1,133 @@
 <div style="display: flex; width: 100%; justify-content: center;">
-  <nav style="width: 100%; max-width: 500px; position: relative; aspect-ratio: 1/1; display: grid; grid-template-areas: 'superior superior' 'inferior-izquierdo inferior-derecho'; grid-template-columns: repeat(2, 1fr); grid-template-rows: repeat(2, 1fr); overflow: hidden; border-radius: 50%;">
-    <a style="overflow: hidden; grid-area: superior;" data-orientation="superior" href="#">
+  <nav class="rosa-circulo-nav">
+    <a class="rosa-nav-link rosa-superior" data-orientation="superior" href="/sabiduría-andina/arte-símbolos-lenguajes">
       <img
         alt="nav"
-        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: top; height: 100%; transform: scale(1); transition: .3s ease-in-out;"
         src="https://github.com/haderman/rosa/blob/main/assets/hero-nav-superior.jpeg?raw=true"
       />
+      <span class="rosa-overlay">
+        <span>Arte, símbolos, lenguajes</span>
+      </span>
     </a>
-    <a data-orientation="inferior-izquierdo" href="#" style="overflow: hidden; grid-area: inferior-izquierdo; z-index: 1; transform-origin: 110% 110%; background-color: blanchedalmond;">
+    <a class="rosa-nav-link rosa-inferior-izquierdo" data-orientation="inferior-izquierdo" href="/sabiduría-andina/mitologías-e-historias">
       <img
         alt="nav"
-        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: left; height: 100%; transform: scale(1); transition: .3s ease-in-out; object-position: left;"
         src="https://github.com/haderman/rosa/blob/main/assets/hero-nav-inferior-izquierdo.jpeg?raw=true"
       />
+      <span class="rosa-overlay">
+        <span>Mitologías e historias</span>
+      </span>
     </a>
-    <a data-orientation="inferior-derecho" href="#" style="overflow: hidden; grid-area: inferior-derecho; z-index: 1; transform-origin: -10% 110%; background-color: cornsilk;">
+    <a class="rosa-nav-link rosa-inferior-derecho" data-orientation="inferior-derecho" href="sabiduría-andina/sabiduría-ancestral">
       <img
         alt="nav"
-        style="width: 100%; aspect-ratio: 1 / 1; object-fit: cover; object-position: left; height: 100%; transform: scale(1); transition: .3s ease-in-out; object-position: left;"
         src="https://github.com/haderman/rosa/blob/main/assets/hero-nav-inferior-derecho.jpeg?raw=true"
       />
+      <span class="rosa-overlay">
+        <span>Sabiduría ancestral</span>
+      </span>
     </a>
   </nav>
 </div>
+
+<style>
+.rosa-circulo-nav {
+  width: 100%;
+  max-width: 500px;
+  position: relative;
+  aspect-ratio: 1/1;
+  display: grid;
+  grid-template-areas: 'superior superior' 'inferior-izquierdo inferior-derecho';
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  overflow: hidden;
+  border-radius: 50%;
+}
+
+.rosa-nav-link {
+  overflow: hidden;
+  position: relative;
+}
+
+.rosa-nav-link img {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  height: 100%;
+  transform: scale(1);
+  transition: .3s ease-in-out;
+}
+
+.rosa-nav-link .rosa-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.rosa-nav-link:hover .rosa-overlay,
+.rosa-nav-link:focus .rosa-overlay {
+  opacity: 1;
+}
+
+.rosa-nav-link:focus {
+  outline: none;
+}
+
+.rosa-nav-link .superior-rosa-overlay {
+  background-color: rgba(255, 190, 11, 0.5);
+}
+
+.rosa-nav-link span {
+  color: white;
+  padding: 5px;
+  border-radius: 3px;
+  font-size: 1rem;
+  text-shadow: 0 0 2px black;
+}
+
+.rosa-superior {
+  grid-area: superior;
+}
+
+.rosa-superior .rosa-overlay {
+  background-color: rgba(255, 190, 11, 0.5);
+}
+
+.rosa-inferior-izquierdo {
+  grid-area: inferior-izquierdo;
+  z-index: 1;
+  transform-origin: 110% 110%;
+  background-color: blanchedalmond;
+}
+
+.rosa-inferior-izquierdo .rosa-overlay {
+  background-color: rgba(251, 86, 7, 0.5);
+}
+
+.rosa-inferior-derecho {
+  grid-area: inferior-derecho;
+  z-index: 1;
+  transform-origin: -10% 110%;
+  background-color: cornsilk;
+}
+
+.rosa-inferior-derecho .rosa-overlay {
+  background-color: rgba(255, 0, 110, 0.5);
+}
+
+.rosa-inferior-izquierdo img {
+  object-position: right;
+}
+
+.rosa-inferior-derecho img {
+  object-position: left;
+}
+</style>
